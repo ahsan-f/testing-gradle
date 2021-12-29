@@ -19,11 +19,11 @@ pipeline{
         }
         stage("c"){
             steps{
-                echo "========executing c========"
+                script {
+                    gv.buildApp()
+                }
             }
-            script{
-                gv.buildApp()
-            }
+            
         }
     }
 }
