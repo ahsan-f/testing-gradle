@@ -23,7 +23,7 @@ pipeline{
                 echo "========executing b========"
             }
         }
-        stage("build"){
+        stage("c"){
             steps{
                 script{
                     gv.test()
