@@ -5,10 +5,16 @@ pipeline{
             steps{
                 echo "========executing A========"
             }
-            nodejs('node-17'){
-                bat 'yarn install '
+        }
+        stage("b"){
+            steps{
+                echo "========executing b========"
+            }
+        }
+        stage("c"){
+            steps{
+                echo "========executing c========"
             }
         }
     }
-    
 }
