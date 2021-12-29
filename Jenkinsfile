@@ -1,7 +1,7 @@
 def gv
 pipeline{
     agent any
-    tools {nodejs "node-17"}
+    tools {nodejs "Nodejs-17.3.0"}
     stages{
         stage("init"){
             steps{
@@ -21,7 +21,7 @@ pipeline{
                 echo "========executing b========"
             }
         }
-        stage("c"){
+        stage("build"){
             steps{
                 script {
                     gv.buildApp()
