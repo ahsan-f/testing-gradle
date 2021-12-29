@@ -15,6 +15,9 @@ pipeline{
             steps{
                 echo "========executing c========"
             }
+            nodejs('node-17'){
+                sh 'yarn install '
+            }
         }
     }
 }
