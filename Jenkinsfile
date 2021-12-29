@@ -11,8 +11,11 @@ pipeline{
             steps{
                 echo "========executing A========"
             }
-            withGradle(){
-               bat './gradle -v'
+//             withGradle(){
+//                bat './gradle -v'
+//             }
+            nodejs('node-17'){
+                bat 'yarn install '
             }
             
         }
