@@ -1,16 +1,21 @@
 pipeline{
-  agent any
-  stages{
-    stage("starting app"){
-      steps{
-        echo 'executing test'
-      }
+    agent any
+    stages{
+        stage("A"){
+            steps{
+                echo "========executing A========"
+            }
+            
+        }
+        stage("B"){
+            steps{
+                echo "========executing A========"
+            }
+            withGradle(){
+               bat './gradle -v'
+            }
+            
+        }
     }
-    stage("run gradle"){
-      echo 'executing gradle'
-      withGradle(){
-        bat './gradle -v'
-      }
-    }
-  }  
+    
 }
