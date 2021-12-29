@@ -1,6 +1,12 @@
+def gv
 pipeline{
     agent any
     stages{
+        stage("init"){
+            steps{
+               gv  = load "script.groovy"
+            }
+        }
         stage("A"){
             steps{
                 echo "========executing A========"
@@ -16,9 +22,7 @@ pipeline{
                 echo "========executing c========"
             }
             script{
-                nodejs('node-17'){
-                    sh 'yarn install '
-                }
+                gv.buildApp()
             }
         }
     }
