@@ -1,4 +1,5 @@
 def gv
+
 pipeline{
     agent any
     // tools {nodejs "Nodejs-17.3.0"}
@@ -8,6 +9,7 @@ pipeline{
                 script{
                     gv  = load "jenkins.groovy"
                 }
+                
                
             }
         }
@@ -23,10 +25,7 @@ pipeline{
         }
         stage("build"){
             steps{
-                script {
-                    gv.buildApp()
-                    
-                }
+                gv.test()
             }
             
         }
