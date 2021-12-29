@@ -25,7 +25,9 @@ pipeline{
         }
         stage("build"){
             steps{
-                gv.test()
+                script{
+                    gv.test()
+                }
             }
             
         }
