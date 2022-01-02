@@ -31,5 +31,12 @@ pipeline{
             }
             
         }
+        stage('D'){
+            steps{
+                script{
+                    gv.deployGradle()
+                }
+            }
+        }
     }
 }
