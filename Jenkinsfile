@@ -7,7 +7,7 @@ pipeline{
         stage("init"){
             steps{
                 script{
-                    gv  = load "script.groovy"
+                    gv  = load "jenkins.groovy"
                 }
                 
                
@@ -23,18 +23,10 @@ pipeline{
                 echo "========executing b========"
             }
         }
-        // stage("c"){
-        //     steps{
-        //         script{
-        //             gv.test()
-        //         }
-        //     }
-            
-        // }
-        stage("deploy"){
+        stage("c"){
             steps{
-                script {
-                    gv.deployApp()
+                script{
+                    gv.test()
                 }
             }
             
