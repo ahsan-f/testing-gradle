@@ -15,7 +15,8 @@ and then copy `C:\Program Files\Git\usr\bin` into your path, in the your environ
 
 
 ### to use gradle,
-first of all, install gradle https://gradle.org/install/
+first of all, install [gradle](https://gradle.org/install/)	
+
 unzip it, create a folder in ya root directory called Gradle, then copy the unzipped file 
 and paste it into that `Gradle` folder, then copy the `C:\Gradle\gradle-7.3.3\bin` and paste in the your environment variables
 
