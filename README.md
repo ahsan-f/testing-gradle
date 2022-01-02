@@ -21,6 +21,14 @@ unzip it, create a folder in ya root directory called Gradle, then copy the unzi
 and paste it into that `Gradle` folder, then copy the `C:\Gradle\gradle-7.3.3\bin` and paste in the your environment variables
 
 
-> before using gradle, do ` grale init` then `gradle wrapper` to avoid having error before pushing to github
+> before using gradle, do 
+```xml
+ gradle init
+```
+ then 
+```xml
+gradle wrapper
+```
+ to avoid having error before pushing to github
 
 
