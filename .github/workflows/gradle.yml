@@ -13,13 +13,13 @@ on:
   pull_request:
     branches: [ "master" ]
 
+# Grant write permissions to the workflow to allow dependency submission
+permissions:
+  contents: write
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -27,7 +27,7 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-
+    
     # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
     # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
     - name: Setup Gradle
@@ -49,11 +49,7 @@ jobs:
     #   run: gradle build
 
   dependency-submission:
-
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
     - uses: actions/checkout@v4
     - name: Set up JDK 17
@@ -66,3 +62,4 @@ jobs:
     # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
     - name: Generate and submit dependency graph
       uses: gradle/actions/dependency-submission@af1da67850ed9a4cedd57bfd976089dd991e2582 # v4.0.0
+
